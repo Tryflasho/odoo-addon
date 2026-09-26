@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.flasho</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Flasho" name="flasho_delivery">
+                    <block title="API" name="flasho_api">
+                        <setting string="API key" help="Website API key from the Flasho dashboard. Starts with flsh_.">
+                            <field name="flasho_api_key" password="True"/>
+                        </setting>
+                        <setting string="Base URL">
+                            <field name="flasho_base_url"/>
+                        </setting>
+                    </block>
+                    <block title="Pickup" name="flasho_pickup">
+                        <setting string="Pickup latitude">
+                            <field name="flasho_pickup_latitude"/>
+                        </setting>
+                        <setting string="Pickup longitude">
+                            <field name="flasho_pickup_longitude"/>
+                        </setting>
+                        <setting string="Pickup address">
+                            <field name="flasho_pickup_address"/>
+                        </setting>
+                    </block>
+                    <block title="Booking" name="flasho_booking">
+                        <setting string="Vehicle type">
+                            <field name="flasho_vehicle_type"/>
+                        </setting>
+                        <setting string="Book on confirm" help="Create a Flasho delivery automatically when a quotation is confirmed.">
+                            <field name="flasho_auto_book"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

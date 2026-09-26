@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_flasho" model="ir.ui.view">
+        <field name="name">sale.order.form.flasho</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_flasho_book"
+                        type="object"
+                        string="Book Flasho Delivery"
+                        class="btn-primary"
+                        invisible="flasho_delivery_id or state not in ('sale', 'done')"/>
+                <button name="action_flasho_refresh"
+                        type="object"
+                        string="Refresh Flasho Status"
+                        invisible="not flasho_delivery_id"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Flasho" name="flasho">
+                    <group>
+                        <group>
+                            <field name="flasho_collect_cash"/>
+                            <field name="flasho_delivery_id"/>
+                            <field name="flasho_order_number"/>
+                            <field name="flasho_status"/>
+                        </group>
+                        <group>
+                            <field name="flasho_price"/>
+                            <field name="flasho_driver_name"/>
+                            <field name="flasho_driver_phone"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
