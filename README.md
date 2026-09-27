@@ -1,6 +1,6 @@
 # Flasho Delivery for Odoo
 
-Odoo 17/18 addon that books and tracks [Flasho](https://vendors.tryflasho.com) deliveries from sales orders.
+Odoo 19 addon that books and tracks [Flasho](https://vendors.tryflasho.com) deliveries from sales orders.
 
 ## Features
 
